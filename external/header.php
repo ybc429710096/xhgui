@@ -100,6 +100,8 @@ if (extension_loaded('uprofiler')) {
 
 register_shutdown_function(
     function () {
+        //放入后台执行 
+        fastcgi_finish_request();
         if (extension_loaded('uprofiler')) {
             $data['profile'] = uprofiler_disable();
         } else if (extension_loaded('tideways')) {
@@ -112,8 +114,8 @@ register_shutdown_function(
         // Further Reading: http://blog.preinheimer.com/index.php?/archives/248-When-does-a-user-abort.html
         // flush() asks PHP to send any data remaining in the output buffers. This is normally done when the script completes, but
         // since we're delaying that a bit by dealing with the xhprof stuff, we'll do it now to avoid making the user wait.
-        ignore_user_abort(true);
-        flush();
+        // ignore_user_abort(true);
+        // flush();
 
         if (!defined('XHGUI_ROOT_DIR')) {
             require dirname(dirname(__FILE__)) . '/src/bootstrap.php';
