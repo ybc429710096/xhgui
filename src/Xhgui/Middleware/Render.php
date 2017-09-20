@@ -5,7 +5,9 @@ class Xhgui_Middleware_Render extends Middleware
 {
     public function call()
     {
-        echo 3;die;
+        echo '<pre>';
+        print_r($_SESSION);
+        echo '</pre>';die;
         $app = $this->app;
 
         // Run the controller action/route function
