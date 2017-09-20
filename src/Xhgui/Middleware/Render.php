@@ -5,10 +5,11 @@ class Xhgui_Middleware_Render extends Middleware
 {
     public function call()
     {
-        echo '<pre>';
-        print_r($_SESSION);
-        echo '</pre>';die;
+        session_start();
         $app = $this->app;
+        if (empty($_SESSION['username'])) {
+            $app->redirect($app->urlFor('login.index'));
+        }
 
         // Run the controller action/route function
         $this->next->call();
