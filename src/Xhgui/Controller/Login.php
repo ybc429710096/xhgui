@@ -12,12 +12,9 @@ class Xhgui_Controller_Login extends Xhgui_Controller
         $this->_watches = $watches;
     }
 
-    public function get()
+    public function index()
     {
-        $watched = $this->_watches->getAll();
-
-        $this->_template = 'watch/list.twig';
-        $this->set(array('watched' => $watched,'title' => '函数监控'));
+        echo 3333;
     }
 
     public function post()
