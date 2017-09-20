@@ -110,7 +110,7 @@ $app->get('/waterfall/data', function () use ($di) {
 })->name('waterfall.data');
 
 $app->get('/login', function () use ($di, $app) {
-    var_dump($di);die;
+    var_dump($di['loginController']);die;
     $app->controller = $di['loginController'];
     $app->controller->index();
 })->name('login.index');
