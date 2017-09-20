@@ -47,9 +47,9 @@ class Xhgui_ServiceContainer extends Pimple
             $app = new Slim($c['config']);
 
             // Enable cookie based sessions
-            $app->add(new SessionCookie(array(
-                'httponly' => true,
-            )));
+            // $app->add(new SessionCookie(array(
+            //     'httponly' => true,
+            // )));
 
             // Add renderer.
             $app->add(new Xhgui_Middleware_Render());
