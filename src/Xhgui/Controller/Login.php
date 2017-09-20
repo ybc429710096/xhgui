@@ -29,7 +29,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     		$json = array('status' => 0, 'info' => '用户名或密码错误');
     		die(json_encode($json));
     	}
-
+    	echo 33;
     	$_SESSION['username'] = $request['username'];
     	$json = array('status' => 1, 'info' => '登录成功');
         die(json_encode($json));
