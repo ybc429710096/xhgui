@@ -21,16 +21,16 @@ class Xhgui_Controller_Login extends Xhgui_Controller
         $request = $app->request()->post();
         $userList = Xhgui_Config::read('admin.user');
         $user = $userList[$request['username']];
-        // try {
-        	if (empty($user) || $user['password'] != $request['password']) {
-        		// return throw new Exception('用户名或密码错误', 0);        		
-        	}
-        	$_SESSION['username'] = $user['username'];
-        	$json = array('status' => 1);
-        // } catch (Exception $e) {
-        // 	$json = array('status' => 0, 'info' => $e->getMessage());
-        // }
-
+        //验证
+    	if (empty($user) || $user['password'] != $request['password']) {
+    		$json = array('status' => 0, 'info' => '用户名或密码错误');
+    		die(json_encode($json));
+    	}
+    	
+    	$_SESSION['username'] = $user['username'];
+    	$json = array('status' => 1);
         die(json_encode($json));
     }
+
+
 }
