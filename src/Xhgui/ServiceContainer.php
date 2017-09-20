@@ -126,7 +126,7 @@ class Xhgui_ServiceContainer extends Pimple
         };
 
         $this['loginController'] = function ($c) {
-            return new Xhgui_Controller_Watch($c['app']);
+            return new Xhgui_Controller_Login($c['app']);
         };
     }
 
