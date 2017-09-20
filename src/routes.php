@@ -114,7 +114,7 @@ $app->get('/login', function () use ($di, $app) {
     $app->controller->index();
 })->name('login.index');
 
-$app->get('/login/doLogin', function () use ($di, $app) {
+$app->post('/login/doLogin', function () use ($di, $app) {
     $app->controller = $di['loginController'];
     $app->controller->doLogin();
 })->name('login.doLogin');
