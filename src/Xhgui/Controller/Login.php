@@ -13,6 +13,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     public function index()
     {
         echo 3333;
+        $this->_template = 'Login/index.twig';
     }
 
     public function post()
