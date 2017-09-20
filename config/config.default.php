@@ -5,6 +5,10 @@
 return array(
     'debug' => false,
     'mode' => 'development',
+    'admin.user' => array(
+        //user => password
+        'admin' => '429710096'
+    ),
 
     // Can be either mongodb or file.
     /* 
