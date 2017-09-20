@@ -8,9 +8,9 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     public function __construct($app)
     {
         $this->_app = $app;
-        if (!empty($_SESSION['username'])) {
-        	$app->redirect($app->urlFor('/'));
-        }
+        // if (!empty($_SESSION['username'])) {
+        // 	$app->redirect($app->urlFor('/'));
+        // }
     }
 
     public function index()
