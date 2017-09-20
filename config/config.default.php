@@ -5,6 +5,7 @@
 return array(
     'debug' => false,
     'mode' => 'development',
+    //用户信息
     'admin.user' => array(
         //user => password
         'admin' => '429710096'

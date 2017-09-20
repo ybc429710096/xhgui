@@ -101,8 +101,14 @@ if (extension_loaded('uprofiler')) {
 
 register_shutdown_function(
     function () {
-        //放入后台执行 
-        fastcgi_finish_request();
+        if (function_exists('fastcgi_finish_request')){
+            //放入后台执行 
+            fastcgi_finish_request();
+        } else{
+            ignore_user_abort(true);
+            flush();
+        }
+        
         if (extension_loaded('uprofiler')) {
             $data['profile'] = uprofiler_disable();
         } else if (extension_loaded('tideways')) {
