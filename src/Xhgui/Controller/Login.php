@@ -28,7 +28,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     	}
 
     	$_SESSION['username'] = $request['username'];
-    	$json = array('status' => 1);
+    	$json = array('status' => 1, 'info' => '登录成功');
         die(json_encode($json));
     }
 
