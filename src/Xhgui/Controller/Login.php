@@ -18,7 +18,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     public function doLogin()
     {
         $app = $this->_app;
-        $request = $app->request();
+        $request = $app->request()->post();
         var_dump($request);die;
         // $app->redirect($app->urlFor('watch.list'));
     }
