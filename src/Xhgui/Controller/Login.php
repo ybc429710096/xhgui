@@ -8,6 +8,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     public function __construct($app)
     {
         $this->_app = $app;
+        echo 5555;
     }
 
     public function index()
