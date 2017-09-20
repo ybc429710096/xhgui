@@ -7,11 +7,9 @@ class Xhgui_Middleware_Render extends Middleware
     {
 
         $app = $this->app;
-        echo '<pre>';
-        print_r($_SERVER);
-        echo '</pre>';die;
-        if (empty($_SESSION['username'])) {
-            // $app->redirect($app->urlFor('login.index'));
+        $bool = strpos($_SERVER['REQUEST_URI'],'/login') === false;
+        if (empty($_SESSION['username']) && $bool) {
+            $app->redirect($app->urlFor('login.index'));
         }
 
         // Run the controller action/route function
