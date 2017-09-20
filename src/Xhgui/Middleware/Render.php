@@ -8,7 +8,7 @@ class Xhgui_Middleware_Render extends Middleware
 
         $app = $this->app;
         $bool = strpos($_SERVER['REQUEST_URI'],'/login') === false;
-        var_dump($_SESSION['username']);die;
+        var_dump($_SESSION['username']);
         if (empty($_SESSION['username']) && $bool) {
             $app->redirect($app->urlFor('login.index'));
         }
