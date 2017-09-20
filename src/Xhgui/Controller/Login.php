@@ -12,24 +12,14 @@ class Xhgui_Controller_Login extends Xhgui_Controller
 
     public function index()
     {
-        echo 3333;
         $this->_template = 'login/index.twig';
     }
 
-    public function post()
+    public function doLogin()
     {
         $app = $this->_app;
-        $watches = $this->_watches;
-
-        $saved = false;
         $request = $app->request();
-        foreach ((array)$request->post('watch') as $data) {
-            $saved = true;
-            $watches->save($data);
-        }
-        if ($saved) {
-            $app->flash('success', 'Watch functions updated.');
-        }
-        $app->redirect($app->urlFor('watch.list'));
+        var_dump($request);die;
+        // $app->redirect($app->urlFor('watch.list'));
     }
 }
