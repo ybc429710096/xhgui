@@ -7,7 +7,7 @@ class Xhgui_Middleware_Render extends Middleware
     {
 
         $app = $this->app;
-        var_dump($app->controller);die;
+       
         if (empty($_SESSION['username'])) {
             $app->redirect($app->urlFor('login.index'));
         }
