@@ -108,3 +108,8 @@ $app->get('/waterfall', function () use ($di, $app) {
 $app->get('/waterfall/data', function () use ($di) {
     $di['waterfallController']->query();
 })->name('waterfall.data');
+
+$app->get('/login', function () use ($di, $app) {
+    $app->controller = $di['loginController'];
+    $app->controller->get();
+})->name('login.index');
