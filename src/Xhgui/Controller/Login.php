@@ -12,7 +12,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
 
     public function index()
     {
-        echo 3333;die;
+        echo 3333;
     }
 
     public function post()
