@@ -4,12 +4,10 @@ class Xhgui_Controller_Login extends Xhgui_Controller
 {
 
     protected $_app;
-    protected $_watches;
 
-    public function __construct($app, $watches)
+    public function __construct($app)
     {
         $this->_app = $app;
-        $this->_watches = $watches;
     }
 
     public function index()
