@@ -55,8 +55,7 @@
  */
 
 // this file should not - under no circumstances - interfere with any other application
-//设置时区
-date_default_timezone_set("PRC");
+
 if (!extension_loaded('xhprof') && !extension_loaded('uprofiler') && !extension_loaded('tideways')) {
     error_log('xhgui - either extension xhprof, uprofiler or tideways must be loaded');
     return;
