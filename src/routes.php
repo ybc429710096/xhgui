@@ -3,6 +3,7 @@
  * Routes for Xhgui
  */
 $app->error(function (Exception $e) use ($di, $app) {
+    echo 666;die;
     $view = $di['view'];
     $view->parserOptions['cache'] = false;
     $view->parserExtensions = array(
@@ -110,7 +111,6 @@ $app->get('/waterfall/data', function () use ($di) {
 })->name('waterfall.data');
 
 $app->get('/login', function () use ($di, $app) {
-    echo 3;die;
     echo(ini_get('log_errors'));
     $app->controller = $di['loginController'];
     $app->controller->index();
