@@ -9,7 +9,7 @@ class Xhgui_Controller_Login extends Xhgui_Controller
     {
         $this->_app = $app;
         if (!empty($_SESSION['username'])) {
-        	$app->redirect($app->urlFor('/'));
+        	$app->redirect('/');
         }
     }
 
